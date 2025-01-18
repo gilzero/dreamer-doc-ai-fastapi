@@ -1,0 +1,132 @@
+/* app/static/css/style.css */
+
+:root {
+    --primary-color: #0d6efd;
+    --secondary-color: #6c757d;
+    --success-color: #198754;
+    --danger-color: #dc3545;
+    --background-color: #f8f9fa;
+    --card-background: #ffffff;
+    --text-color: #212529;
+    --border-color: #dee2e6;
+}
+
+/* Dark theme variables */
+[data-bs-theme="dark"] {
+    --background-color: #212529;
+    --card-background: #2c3034;
+    --text-color: #f8f9fa;
+    --border-color: #495057;
+}
+
+body {
+    background-color: var(--background-color);
+    color: var(--text-color);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Upload Zone Styles */
+.upload-zone {
+    border: 2px dashed var(--border-color);
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    background-color: var(--card-background);
+}
+
+.upload-zone:hover,
+.upload-zone.dragover {
+    border-color: var(--primary-color);
+    background-color: rgba(13, 110, 253, 0.05);
+}
+
+.upload-zone i {
+    color: var(--primary-color);
+    transition: transform 0.3s ease;
+}
+
+.upload-zone:hover i {
+    transform: translateY(-5px);
+}
+
+/* Card Styles */
+.card {
+    background-color: var(--card-background);
+    border: 1px solid var(--border-color);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-2px);
+}
+
+/* Analysis Results Styles */
+.analysis-section {
+    border-bottom: 1px solid var(--border-color);
+    padding: 1rem;
+}
+
+.analysis-section:last-child {
+    border-bottom: none;
+}
+
+.analysis-title {
+    color: var(--primary-color);
+    font-weight: 600;
+}
+
+/* Loading Spinner Overlay */
+.spinner-overlay {
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 9999;
+}
+
+/* Toast Customization */
+.toast {
+    background-color: var(--card-background);
+    border: 1px solid var(--border-color);
+}
+
+.toast-success {
+    border-left: 4px solid var(--success-color);
+}
+
+.toast-error {
+    border-left: 4px solid var(--danger-color);
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .container {
+        padding: 1rem;
+    }
+
+    .card {
+        margin-bottom: 1rem;
+    }
+
+    .upload-zone {
+        padding: 2rem 1rem;
+    }
+}
+
+/* Animation Classes */
+.fade-in {
+    animation: fadeIn 0.3s ease-in;
+}
+
+.slide-up {
+    animation: slideUp 0.3s ease-out;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes slideUp {
+    from { transform: translateY(20px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
